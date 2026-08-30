@@ -13,25 +13,17 @@ export default function SkillCard({ skill }: { skill: Skill }) {
   const icon = getTechIcon(skill.name);
 
   return (
-    <div className="panel panel-hover flex flex-col gap-4 p-4">
+    <div className="panel panel-hover flex flex-col gap-3 p-4">
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-signal/40 bg-gradient-to-br from-signal/15 to-transparent text-signal shadow-[0_0_16px_rgba(43,255,140,0.18)]">
-          {icon ?? (
-            <span className="font-mono text-xs font-semibold">{initials(skill.name)}</span>
-          )}
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-surface-2 text-text">
+          {icon ?? <span className="text-xs font-semibold">{initials(skill.name)}</span>}
         </span>
         <span className="text-sm font-medium text-text">{skill.name}</span>
       </div>
 
       {skill.level && (
-        <div className="flex items-center gap-2">
-          <div className="h-1 flex-1 overflow-hidden rounded-full bg-border">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-signal to-cyan"
-              style={{ width: `${pct}%` }}
-            />
-          </div>
-          <span className="font-mono text-[10px] text-muted">{Math.round(pct)}%</span>
+        <div className="h-1 w-full overflow-hidden rounded-full bg-border">
+          <div className="h-full rounded-full bg-signal" style={{ width: `${pct}%` }} />
         </div>
       )}
     </div>

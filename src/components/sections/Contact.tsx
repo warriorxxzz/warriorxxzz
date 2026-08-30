@@ -6,25 +6,17 @@ import SocialLinks from "../ui/SocialLinks";
 import Icon from "../icons/Icon";
 import Reveal from "../ui/Reveal";
 
-function Field({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <label className="mb-2 block font-mono text-[11px] uppercase tracking-widest text-muted">
-        {label}
-      </label>
+      <label className="mb-2 block text-xs uppercase tracking-wide text-muted">{label}</label>
       {children}
     </div>
   );
 }
 
 const inputClasses =
-  "w-full rounded-lg border border-border bg-surface-2/60 px-4 py-3 text-sm text-text placeholder:text-muted/50 outline-none transition-colors focus:border-signal focus:shadow-[0_0_0_3px_rgba(43,255,140,0.1)]";
+  "w-full rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm text-text placeholder:text-muted/60 outline-none transition-colors focus:border-signal";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -34,25 +26,19 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio message from ${name || "a visitor"}`);
-    const body = encodeURIComponent(
-      `${message}\n\n—\n${name}\n${email}`
-    );
+    const body = encodeURIComponent(`${message}\n\n—\n${name}\n${email}`);
     window.location.href = `mailto:${PERSONAL.email}?subject=${subject}&body=${body}`;
   };
 
   return (
     <section id="contact" className="scroll-mt-16 border-t border-border px-6 py-24">
       <div className="mx-auto max-w-2xl">
-        <SectionHeading
-          eyebrow="contact"
-          title="Establish connection"
-          description={PERSONAL.availability}
-        />
+        <SectionHeading eyebrow="Contact" title="Get in touch" description={PERSONAL.availability} />
 
         <Reveal>
-          <form onSubmit={handleSubmit} className="scan-frame panel relative overflow-hidden p-6 sm:p-8">
+          <form onSubmit={handleSubmit} className="panel p-6 sm:p-8">
             <div className="space-y-5">
-              <Field label="your full name">
+              <Field label="Your name">
                 <input
                   type="text"
                   required
@@ -63,7 +49,7 @@ export default function Contact() {
                 />
               </Field>
 
-              <Field label="your email address">
+              <Field label="Your email">
                 <input
                   type="email"
                   required
@@ -74,7 +60,7 @@ export default function Contact() {
                 />
               </Field>
 
-              <Field label="detailed message">
+              <Field label="Message">
                 <textarea
                   required
                   rows={4}
@@ -86,22 +72,16 @@ export default function Contact() {
               </Field>
 
               <Button type="submit" className="w-full justify-center">
-                Transmit Message
+                Send Message
                 <Icon name="arrow-right" />
               </Button>
             </div>
-
-            <p className="mt-4 text-center font-mono text-[11px] text-muted">
-              opens your email app with this pre-filled
-            </p>
           </form>
         </Reveal>
 
         <Reveal delay={0.1}>
           <div className="mt-10 flex flex-col items-center gap-3">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
-              or reach out directly
-            </p>
+            <p className="text-sm text-muted">Or reach out directly</p>
             <SocialLinks />
           </div>
         </Reveal>

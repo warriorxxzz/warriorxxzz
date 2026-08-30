@@ -21,13 +21,11 @@ interface ButtonProps {
 }
 
 const base =
-  "inline-flex items-center gap-2 rounded-md px-5 py-2.5 font-mono text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal";
+  "inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-signal text-bg hover:bg-signal-soft hover:shadow-[0_0_24px_rgba(43,255,140,0.35)]",
-  outline:
-    "border border-border text-text hover:border-signal hover:text-signal hover:shadow-[0_0_16px_rgba(43,255,140,0.15)]",
+  primary: "bg-text text-bg hover:bg-text/90",
+  outline: "border border-border text-text hover:border-signal/50",
 };
 
 export default function Button({
@@ -44,7 +42,7 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const reduced = usePrefersReducedMotion();
-  const hoverProps = reduced ? {} : { whileHover: { y: -2 }, whileTap: { y: 0 } };
+  const hoverProps = reduced ? {} : { whileHover: { y: -1 }, whileTap: { y: 0 } };
   const classes = cn(base, variants[variant], className);
   const ariaLabel = rest["aria-label"];
 
