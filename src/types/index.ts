@@ -9,12 +9,15 @@ export interface Project {
   image?: string;
   status?: ProjectStatus;
   featured?: boolean;
+  whyBuilt?: string;
+  whatLearned?: string;
+  whatBroke?: string;
 }
 
 export interface Skill {
   name: string;
   category: string;
-  level?: 1 | 2 | 3 | 4 | 5;
+  note: string;
 }
 
 export interface Achievement {
@@ -49,9 +52,9 @@ export interface NavLink {
   href: string;
 }
 
-export interface BuildingItem {
+export interface JourneyStep {
+  stage: string;
   title: string;
-  description: string;
   active?: boolean;
 }
 
@@ -64,5 +67,12 @@ export interface PersonalInfo {
   location: string;
   availability: string;
   email: string;
-  currentlyBuilding: BuildingItem[];
+  githubUsername: string;
+  now: {
+    learning: string;
+    building: string;
+    exploring: string;
+  };
+  howILearn: string[];
+  lessonsLearned: string[];
 }

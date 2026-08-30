@@ -2,49 +2,34 @@ import type { PersonalInfo } from "../types";
 
 export const PERSONAL: PersonalInfo = {
   handle: "W4M",
-
   name: "Prakash Yadav",
- 
-
   role: "Student • Developer • Cybersecurity Learner",
-
   tagline:
-    "I learn by building, breaking, and understanding how things work.",
-
+    "I started with programming, then got curious about Linux, networking, and what happens behind the screen. Now I'm learning by building small projects, experimenting, making mistakes, and figuring out why things work.",
   bio: [
-    "I'm a student who got curious about what happens behind the screen — how software works, how systems communicate, and how things can go wrong.",
-
-    "I started with programming and gradually found myself drawn toward Linux, networking, and cybersecurity. These days, I spend my time learning the fundamentals, experimenting with code, and turning what I learn into real projects.",
-
-    "I'm still learning, and that's exactly what this portfolio is about. It is a record of the things I build, the skills I'm developing, the mistakes I make, and the ideas I keep exploring.",
+    "I'm a student from Nepal. I got into programming first, and that curiosity gradually pulled me toward Linux, networking, and eventually cybersecurity.",
+    "Most of what I know, I've learned by building something small, breaking it, and figuring out why. I don't have this all figured out — I'm still learning, and I make plenty of mistakes along the way.",
+    "This site is mostly a record of that process: projects I've worked on, things I'm learning, and the occasional thing I broke and had to fix.",
   ],
-
   location: "Nepal",
-
   availability: "Open to learning, projects & collaboration",
-
   email: "warriorxxzz8@gmail.com",
-
-  currentlyBuilding: [
-    {
-      title: "This portfolio",
-      description:
-        "Building and improving my personal portfolio while learning modern web development with React, TypeScript, and Tailwind CSS.",
-      active: true,
-    },
-
-    {
-      title: "Linux & Cybersecurity Lab",
-      description:
-        "Practicing Linux, networking, system fundamentals, and ethical security concepts through hands-on experiments and labs.",
-      active: true,
-    },
-
-    {
-      title: "Learning in Public",
-      description:
-        "Documenting projects, experiments, notes, and lessons learned as I continue developing my programming and cybersecurity skills.",
-      active: true,
-    },
+  githubUsername: "warriorxxzz",
+  now: {
+    learning: "Linux, networking, Python, and web fundamentals",
+    building: "Small tools, experiments, and web projects",
+    exploring: "Cybersecurity, and how systems actually talk to each other",
+  },
+  howILearn: [
+    "Learn the fundamentals",
+    "Build something small",
+    "Break it",
+    "Understand why it broke",
+    "Fix it and write down what I learned",
+  ],
+  lessonsLearned: [
+    "Copying commands without understanding them eventually creates bigger problems.",
+    "Debugging usually teaches more than getting the first version working.",
+    "A working project and a well-understood project aren't always the same thing.",
   ],
 };

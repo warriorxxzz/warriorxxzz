@@ -2,7 +2,6 @@ import { useState } from "react";
 import { PERSONAL } from "../../data/personal";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
-import SocialLinks from "../ui/SocialLinks";
 import Icon from "../icons/Icon";
 import Reveal from "../ui/Reveal";
 
@@ -80,9 +79,26 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-10 flex flex-col items-center gap-3">
-            <p className="text-sm text-muted">Or reach out directly</p>
-            <SocialLinks />
+          <div className="mt-10 space-y-2 border-t border-border pt-8 text-sm">
+            <p className="text-muted">
+              Everything here is also on GitHub — commits, work in progress, mistakes included.
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2">
+              <a
+                href={`https://github.com/${PERSONAL.githubUsername}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-text underline decoration-border underline-offset-4 hover:decoration-signal"
+              >
+                GitHub
+              </a>
+              <a
+                href={`mailto:${PERSONAL.email}`}
+                className="text-text underline decoration-border underline-offset-4 hover:decoration-signal"
+              >
+                Email
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>

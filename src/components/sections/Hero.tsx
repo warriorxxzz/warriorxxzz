@@ -11,8 +11,9 @@ export default function Hero() {
     >
       <div className="mx-auto w-full max-w-3xl">
         <Reveal>
-          <p className="mb-6 font-display text-base italic text-muted">
-            {PERSONAL.location} — currently open to new work
+          <p className="mb-6 flex items-center gap-2 text-sm text-muted">
+            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+            Currently learning &amp; building — {PERSONAL.location}
           </p>
         </Reveal>
 
@@ -21,8 +22,12 @@ export default function Hero() {
         </h1>
 
         <Reveal delay={0.1}>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-            {PERSONAL.role}. {PERSONAL.tagline}
+          <p className="mt-2 text-lg text-muted">{PERSONAL.role}</p>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
+            {PERSONAL.tagline}
           </p>
         </Reveal>
 

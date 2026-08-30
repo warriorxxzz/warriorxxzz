@@ -28,9 +28,9 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <blockquote className="font-display text-2xl font-normal italic leading-snug text-text">
+          <p className="font-display text-2xl font-normal italic leading-snug text-text">
             "{lead}"
-          </blockquote>
+          </p>
 
           <div className="mt-6 space-y-4">
             {rest.map((paragraph) => (
@@ -39,10 +39,22 @@ export default function About() {
               </p>
             ))}
           </div>
+        </Reveal>
 
-          <p className="mt-8 text-sm text-muted">
-            Based in {PERSONAL.location} — {PERSONAL.availability.toLowerCase()}.
-          </p>
+        <Reveal delay={0.1}>
+          <div className="mt-14">
+            <p className="mb-6 text-sm uppercase tracking-wide text-muted">How I learn</p>
+            <ol className="space-y-4">
+              {PERSONAL.howILearn.map((step, i) => (
+                <li key={step} className="flex gap-4 border-b border-border/60 pb-4 last:border-0">
+                  <span className="font-mono text-sm text-signal">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-base text-text">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
         </Reveal>
       </div>
     </section>
