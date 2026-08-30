@@ -23,7 +23,7 @@ export const PERSONAL: PersonalInfo = {
 
   availability: "Open to learning, projects & collaboration",
 
-  email: "vvghff052@gmail.com",
+  email: "warriorxxzz8@gmail.com",
 
   currentlyBuilding: [
     {

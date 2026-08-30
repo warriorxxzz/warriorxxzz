@@ -30,6 +30,7 @@ export type IconName =
   | "github"
   | "linkedin"
   | "mail"
+  | "whatsapp"
   | "external"
   | "arrow-right"
   | "menu"

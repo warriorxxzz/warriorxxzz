@@ -4,7 +4,7 @@ import { PERSONAL } from "./personal";
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: "GitHub",
-    url: "https://github.com/vvghff052-netizen",
+    url: "https://github.com/warriorxxzz",
     icon: "github",
   },
   {
