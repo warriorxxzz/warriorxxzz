@@ -1,16 +1,54 @@
-# W4M — Personal Portfolio
+# W4M
 
-Personal portfolio of Prakash Yadav — student, developer, and cybersecurity learner.
+> Student • Developer • Cybersecurity Learner
 
-**Live site:** [warriorxxzz-portfolio.vercel.app](https://warriorxxzz-portfolio.vercel.app)
+I’m a student learning how software, operating systems, and networks work by building things, experimenting, and documenting what I learn.
+
+My current focus is on understanding technology from the fundamentals rather than simply using tools without understanding how they work.
+
+## Current Focus
+
+- 🐍 Python
+- 🐧 Linux
+- 🌐 Networking
+- 💻 Web Development
+- 🔐 Ethical Cybersecurity
+- 🤖 AI & Automation
+- 🧰 Git & GitHub
 
 ## Tech Stack
 
-React 19 · TypeScript · Vite · Tailwind CSS · Motion
+### Languages
+- Python
+- JavaScript
+- TypeScript
+- C
+- Bash
 
-## Getting Started
+### Development
+- React
+- Node.js
+- Tailwind CSS
+- Vite
 
-```bash
-npm install
-npm run dev
-npm run build
+### Systems & Security
+- Linux
+- Networking Fundamentals
+- Web Security
+- Ethical Cybersecurity
+
+### Tools
+- Git
+- GitHub
+- Termux
+
+## What I'm Building
+
+I use my repositories to document practical projects, experiments, notes, and things I learn while developing my technical skills.
+
+More real projects will be added as I build them.
+
+## Learning Approach
+
+```text
+Learn → Build → Break → Understand → Improve 
