@@ -10,7 +10,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: "WhatsApp",
     url: "https://wa.me/9779815240112",
-    icon: "external",
+    icon: "whatsapp",
   },
   {
     label: "Email",
