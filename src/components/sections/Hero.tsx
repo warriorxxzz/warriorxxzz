@@ -9,26 +9,25 @@ export default function Hero() {
       id="hero"
       className="flex min-h-screen scroll-mt-16 flex-col justify-center px-6 pt-20"
     >
-      <div className="mx-auto w-full max-w-3xl">
-        <Reveal>
-          <p className="mb-6 flex items-center gap-2 text-sm text-muted">
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-            Currently learning &amp; building — {PERSONAL.location}
+      <div className="mx-auto grid w-full max-w-5xl gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
+        <div>
+          <Reveal>
+            <p className="mb-5 text-sm text-muted">{PERSONAL.location}</p>
+          </Reveal>
+
+          <h1 className="text-hero font-display font-semibold text-text">{PERSONAL.name}</h1>
+        </div>
+
+        <Reveal delay={0.05}>
+          <p className="text-sm leading-relaxed text-muted sm:max-w-[11rem] sm:text-right">
+            {PERSONAL.role}
           </p>
         </Reveal>
+      </div>
 
-        <h1 className="font-display text-6xl font-medium leading-[1.05] tracking-tight text-text sm:text-7xl">
-          {PERSONAL.name}
-        </h1>
-
+      <div className="mx-auto mt-10 w-full max-w-5xl border-t border-border pt-10">
         <Reveal delay={0.1}>
-          <p className="mt-2 text-lg text-muted">{PERSONAL.role}</p>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
-            {PERSONAL.tagline}
-          </p>
+          <p className="max-w-2xl text-lg leading-relaxed text-muted">{PERSONAL.tagline}</p>
         </Reveal>
 
         <Reveal delay={0.2}>
@@ -38,7 +37,7 @@ export default function Hero() {
               <Icon name="arrow-right" />
             </Button>
             <Button href="#contact" variant="outline">
-              Get in Touch
+              Contact Me
             </Button>
           </div>
         </Reveal>

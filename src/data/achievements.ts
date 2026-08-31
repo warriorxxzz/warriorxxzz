@@ -2,34 +2,21 @@ import type { Achievement } from "../types";
 
 export const ACHIEVEMENTS: Achievement[] = [
   {
-    title: "Python — Where It Started",
+    title: "Python Core & Scripting",
     description:
-      "I started with Python because I wanted to understand how things actually work behind the screen. Since then, I have been practicing logic, problem-solving, and building small projects.",
-    date: "Ongoing",
-    issuer: "Self Learning",
+      "Mastered Python basics and core programming logic. Currently leveraging Python to write automation scripts and small CLI utilities.",
+    issuer: "Completed Fundamentals",
   },
   {
-    title: "Linux & Cybersecurity",
+    title: "Hack The Box — Linux Fundamentals",
     description:
-      "Linux, networking, and cybersecurity are the areas I am most interested in. I am learning the fundamentals through hands-on labs, experiments, and practical projects.",
-    date: "Ongoing",
-    issuer: "Self Learning",
+      "Actively completing hands-on labs covering Linux file systems, permissions, shell navigation, and privilege concepts.",
+    issuer: "In Progress (4 / 30 Modules)",
   },
   {
-    title: "Python Certificate",
+    title: "Network Security & Cyber Labs",
     description:
-      "Completed a Python course on SoloLearn. It is a small milestone, but an important one in my journey from learning the basics to building things on my own.",
-    date: "2026",
-    issuer: "SoloLearn",
-    image: "/certificates/certificate.jpg",
-    link:
-      "https://api2.sololearn.com/v2/certificates/CC-WEUM3PHG/image/png?t=639209803875574600",
-  },
-  {
-    title: "Building in Public",
-    description:
-      "I use GitHub to document what I learn, experiment with new ideas, and turn concepts into working projects instead of keeping everything in theory.",
-    date: "Ongoing",
-    issuer: "GitHub",
+      "Experimenting with local homelabs and networking tools to understand system architecture and security vulnerabilities.",
+    issuer: "Hands-on Practice",
   },
 ];

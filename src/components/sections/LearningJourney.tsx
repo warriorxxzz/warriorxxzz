@@ -1,27 +1,36 @@
 import { JOURNEY } from "../../data/journey";
-import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
 import { cn } from "../../lib/utils";
 
 export default function LearningJourney() {
   return (
-    <section id="journey" className="scroll-mt-16 border-t border-border px-6 py-24">
-      <div className="mx-auto max-w-3xl">
-        <SectionHeading eyebrow="Journey" title="Learning journey" description="Still going — this isn't a finished timeline." />
+    <section id="journey" className="scroll-mt-16 border-t border-border px-6 py-20">
+      <div className="mx-auto max-w-2xl">
+        <Reveal>
+          <h2 className="text-display mb-10 font-display font-semibold text-text">Journey</h2>
+        </Reveal>
 
-        <div className="space-y-0">
+        <div className="panel overflow-hidden font-mono text-sm">
           {JOURNEY.map((step, i) => (
             <Reveal key={`${step.stage}-${step.title}`} delay={i * 0.05}>
-              <div className="flex gap-5 border-l border-border pb-8 pl-6 last:pb-0">
-                <div className="relative -ml-[1.85rem] mt-1 h-3 w-3 shrink-0 rounded-full border-2 border-border bg-bg">
-                  {step.active && (
-                    <span className={cn("absolute inset-0.5 rounded-full bg-signal")} />
+              <div
+                className={cn(
+                  "flex items-center gap-4 border-b border-border/60 px-5 py-3.5 last:border-0",
+                  step.active && "bg-surface-2"
+                )}
+              >
+                <span
+                  className={cn(
+                    "h-1.5 w-1.5 shrink-0 rounded-full",
+                    step.active ? "bg-signal" : "bg-border"
                   )}
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-muted">{step.stage}</p>
-                  <p className="mt-1 font-display text-lg text-text">{step.title}</p>
-                </div>
+                />
+                <span className="w-20 shrink-0 text-xs uppercase tracking-wide text-muted">
+                  {step.stage}
+                </span>
+                <span className={cn("text-sm", step.active ? "text-text" : "text-muted")}>
+                  {step.title}
+                </span>
               </div>
             </Reveal>
           ))}

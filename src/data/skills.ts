@@ -1,19 +1,18 @@
 import type { Skill } from "../types";
 
 export const SKILLS: Skill[] = [
-  { name: "Python", category: "Languages", note: "Building projects" },
-  { name: "JavaScript", category: "Languages", note: "Learning & experimenting" },
+  { name: "Python", category: "Languages", note: "Learning & building" },
+  { name: "JavaScript", category: "Languages", note: "Learning" },
   { name: "TypeScript", category: "Languages", note: "Learning" },
   { name: "C", category: "Languages", note: "Fundamentals" },
-  { name: "Bash", category: "Languages", note: "Linux & automation" },
+  { name: "Bash", category: "Languages", note: "Learning Linux & scripting" },
 
-  { name: "React", category: "Frameworks & Tools", note: "Building with it" },
-  { name: "Node.js", category: "Frameworks & Tools", note: "Learning & projects" },
-  { name: "Tailwind CSS", category: "Frameworks & Tools", note: "Building interfaces" },
-  { name: "Git", category: "Frameworks & Tools", note: "Daily development workflow" },
+  { name: "React", category: "Frameworks & Tools", note: "Learning" },
+  { name: "Node.js", category: "Frameworks & Tools", note: "Learning" },
+  { name: "Tailwind CSS", category: "Frameworks & Tools", note: "Learning" },
+  { name: "Git", category: "Frameworks & Tools", note: "Daily use" },
 
-  { name: "Linux", category: "Foundations", note: "Command line, daily driver" },
+  { name: "Linux", category: "Foundations", note: "Learning systems & command line" },
   { name: "Networking", category: "Foundations", note: "Learning the fundamentals" },
-  { name: "Web fundamentals", category: "Foundations", note: "HTTP, DNS, how the web works" },
-  { name: "Cybersecurity fundamentals", category: "Foundations", note: "OWASP basics, still early" },
+  { name: "Cybersecurity", category: "Foundations", note: "Starting with the fundamentals" },
 ];

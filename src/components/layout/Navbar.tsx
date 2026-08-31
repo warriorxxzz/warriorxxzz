@@ -32,7 +32,7 @@ export default function Navbar() {
               <a
                 href={link.href}
                 className={cn(
-                  "text-sm transition-colors",
+                  "text-sm font-medium transition-colors",
                   active === link.href.replace("#", "") ? "text-text" : "text-muted hover:text-text"
                 )}
               >
@@ -53,28 +53,36 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="fixed inset-0 z-[60] bg-bg md:hidden">
-          <div className="flex h-full flex-col justify-between px-6 pb-10 pt-24">
-            <ul className="flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href} className="border-b border-border/60 py-4">
-                  <a
-                    href={link.href}
-                    onClick={close}
-                    className={cn(
-                      "font-display text-2xl font-semibold",
-                      active === link.href.replace("#", "") ? "text-text" : "text-muted"
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-col gap-4">
-              <p className="text-sm text-muted">Connect</p>
-              <SocialLinks />
-            </div>
+        <div className="fixed inset-0 z-[100] flex flex-col justify-center bg-bg/98 px-6 backdrop-blur-xl md:hidden">
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={close}
+            className="absolute right-5 top-5 z-[101] flex h-9 w-9 items-center justify-center rounded-md border border-border text-text"
+          >
+            <Icon name="close" />
+          </button>
+
+          <ul className="flex flex-col gap-1">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href} className="border-b border-border/60 py-4">
+                <a
+                  href={link.href}
+                  onClick={close}
+                  className={cn(
+                    "text-2xl font-medium tracking-wide transition-colors",
+                    active === link.href.replace("#", "") ? "text-text" : "text-muted hover:text-text"
+                  )}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-col gap-4">
+            <p className="text-sm text-muted">Connect</p>
+            <SocialLinks />
           </div>
         </div>
       )}

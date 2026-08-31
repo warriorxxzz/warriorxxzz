@@ -1,59 +1,64 @@
 import { PERSONAL } from "../../data/personal";
-import SectionHeading from "../ui/SectionHeading";
+import Icon from "../icons/Icon";
 import Reveal from "../ui/Reveal";
 
 export default function About() {
-  const [lead, ...rest] = PERSONAL.bio;
-
   return (
-    <section id="about" className="scroll-mt-16 border-t border-border px-6 py-24">
-      <div className="mx-auto max-w-3xl">
-        <SectionHeading eyebrow="About" title="Who I am" />
-
+    <section id="hero" className="scroll-mt-16 px-6 pt-20 pb-20">
+      <div className="mx-auto max-w-4xl">
         <Reveal>
-          <div className="mb-10 flex items-center gap-5">
-            <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full border border-border">
-              <img
-                src="/projects/image3.png"
-                alt={PERSONAL.name}
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <p className="font-display text-lg font-medium text-text">{PERSONAL.name}</p>
-              <p className="text-sm text-muted">{PERSONAL.handle}</p>
-            </div>
-          </div>
-        </Reveal>
+          <div className="rounded-3xl border border-border/50 bg-surface/20 p-6 md:p-10">
+            <div className="grid gap-8 sm:grid-cols-[6rem_1fr] sm:items-start">
+              <div className="h-24 w-24 overflow-hidden rounded-2xl border border-border shadow-xl shadow-signal/5">
+                <img
+                  src="/projects/image3.png"
+                  alt={PERSONAL.name}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
 
-        <Reveal delay={0.05}>
-          <p className="font-display text-2xl font-normal italic leading-snug text-text">
-            "{lead}"
-          </p>
+              <div>
+                <p className="text-sm text-muted">{PERSONAL.name}</p>
+                <h1 className="text-display mt-1 font-display font-semibold leading-snug text-text">
+                  Developer focused on Python, Linux, and cybersecurity fundamentals.
+                </h1>
 
-          <div className="mt-6 space-y-4">
-            {rest.map((paragraph) => (
-              <p key={paragraph} className="text-base leading-relaxed text-muted">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </Reveal>
+                <div className="mt-6 max-w-xl space-y-3">
+                  <p className="text-base leading-relaxed text-muted">
+                    I focus on practical engineering — building CLI automation tools, exploring
+                    Linux system internals, and understanding network security layer by layer.
+                  </p>
+                  <p className="text-base leading-relaxed text-muted">
+                    This site logs my technical journey, labs, and active builds.
+                  </p>
+                </div>
 
-        <Reveal delay={0.1}>
-          <div className="mt-14">
-            <p className="mb-6 text-sm uppercase tracking-wide text-muted">How I learn</p>
-            <ol className="space-y-4">
-              {PERSONAL.howILearn.map((step, i) => (
-                <li key={step} className="flex gap-4 border-b border-border/60 pb-4 last:border-0">
-                  <span className="font-mono text-sm text-signal">
-                    {String(i + 1).padStart(2, "0")}
+                <div className="mt-6 inline-flex items-center gap-2 rounded-lg border border-border bg-surface-2/80 px-3 py-2 font-mono text-xs text-muted">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-signal" />
                   </span>
-                  <span className="text-base text-text">{step}</span>
-                </li>
-              ))}
-            </ol>
+                  Currently: {PERSONAL.now.learning}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="#projects"
+                    className="flex items-center gap-2 rounded-xl border border-signal/30 bg-signal/10 px-5 py-2.5 text-sm font-medium text-signal transition-all hover:bg-signal/20"
+                  >
+                    View Projects
+                    <Icon name="arrow-right" className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="#contact"
+                    className="rounded-xl border border-border bg-surface-2 px-5 py-2.5 text-sm font-medium text-muted transition-all hover:border-border/80 hover:text-text"
+                  >
+                    Contact Me
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>

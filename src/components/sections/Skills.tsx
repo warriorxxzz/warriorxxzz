@@ -1,31 +1,30 @@
 import { SKILLS } from "../../data/skills";
 import { groupBy } from "../../lib/utils";
-import SectionHeading from "../ui/SectionHeading";
+import Tag from "../ui/Tag";
 import Reveal from "../ui/Reveal";
 
 export default function Skills() {
   const grouped = groupBy(SKILLS, (s) => s.category);
+  const entries = Object.entries(grouped);
 
   return (
-    <section id="skills" className="scroll-mt-16 border-t border-border px-6 py-24">
+    <section id="skills" className="scroll-mt-16 border-t border-border px-6 py-20">
       <div className="mx-auto max-w-3xl">
-        <SectionHeading
-          eyebrow="Skills"
-          title="What I work with"
-          description="Honest labels, not made-up percentages — this grows as I learn."
-        />
+        <Reveal>
+          <p className="mb-2 text-sm text-muted">Skills</p>
+          <h2 className="text-display mb-14 font-display font-semibold text-text">
+            Technologies I work with
+          </h2>
+        </Reveal>
 
         <div className="space-y-10">
-          {Object.entries(grouped).map(([category, skills], i) => (
+          {entries.map(([category, skills], i) => (
             <Reveal key={category} delay={i * 0.05}>
               <div>
-                <p className="mb-4 text-sm uppercase tracking-wide text-muted">{category}</p>
-                <div className="divide-y divide-border/60">
+                <p className="mb-3 text-xs uppercase tracking-widest text-muted">{category}</p>
+                <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
-                    <div key={skill.name} className="flex items-baseline justify-between gap-4 py-3">
-                      <span className="text-base text-text">{skill.name}</span>
-                      <span className="text-sm text-muted">{skill.note}</span>
-                    </div>
+                    <Tag key={skill.name}>{skill.name}</Tag>
                   ))}
                 </div>
               </div>

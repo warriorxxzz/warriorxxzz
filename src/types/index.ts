@@ -1,4 +1,4 @@
-export type ProjectStatus = "Completed" | "In Progress" | "Planned";
+export type ProjectStatus = "Completed" | "In Active Development" | "Active Practice" | "Planned";
 
 export interface Project {
   title: string;
@@ -73,6 +73,5 @@ export interface PersonalInfo {
     building: string;
     exploring: string;
   };
-  howILearn: string[];
   lessonsLearned: string[];
 }

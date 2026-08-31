@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0c0c0e;
-  --color-surface: #141416;
-  --color-surface-2: #1a1a1d;
+  --color-bg: #09090b;
+  --color-surface: #18181b;
+  --color-surface-2: #1f1f23;
   --color-border: #27272a;
   --color-text: #f4f4f5;
-  --color-muted: #8b8b92;
-  --color-signal: #c9a876;
-  --color-signal-soft: #a88a5f;
-  --color-status: #4ade80;
+  --color-muted: #a1a1aa;
+  --color-signal: #22d3ee;
+  --color-signal-soft: #06b6d4;
+  --color-status: #22d3ee;
 
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
@@ -32,20 +32,46 @@ body {
 }
 
 .panel {
-  border-radius: 0.75rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: color-mix(in srgb, var(--color-surface) 65%, transparent);
 }
 
 .panel-hover {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .panel-hover:hover {
-  border-color: color-mix(in srgb, var(--color-signal) 35%, var(--color-border));
+  border-color: var(--color-border);
   transform: translateY(-2px);
+}
+
+.badge {
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.badge:hover {
+  border-color: color-mix(in srgb, var(--color-signal) 55%, var(--color-border));
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+.status-pill {
+  background: color-mix(in srgb, var(--color-signal) 10%, transparent);
+  color: var(--color-signal);
+  border: 1px solid color-mix(in srgb, var(--color-signal) 20%, transparent);
+}
+
+.text-hero {
+  font-size: clamp(2.5rem, 4.5vw + 1.5rem, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.text-display {
+  font-size: clamp(1.875rem, 2.5vw + 1rem, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .panel-hover:hover { transform: none; }
+  .panel-hover:hover, .badge:hover { transform: none; }
 }
