@@ -2,9 +2,11 @@
 
 > Student • Developer • Cybersecurity Learner
 
-I’m a student learning how software, operating systems, and networks work by building things, experimenting, and documenting what I learn.
+I'm a student learning how software, Linux, and networks actually work.
 
-My current focus is on understanding technology from the fundamentals rather than simply using tools without understanding how they work.
+I started with programming and gradually became interested in what happens behind the screen — from how programs run to how systems communicate.
+
+Right now, I'm focused on learning the fundamentals, experimenting with small ideas, and turning what I learn into real projects.
 
 ## Current Focus
 
@@ -16,7 +18,7 @@ My current focus is on understanding technology from the fundamentals rather tha
 - 🤖 AI & Automation
 - 🧰 Git & GitHub
 
-## Tech Stack
+## Technologies I'm Learning
 
 ### Languages
 - Python
@@ -25,7 +27,7 @@ My current focus is on understanding technology from the fundamentals rather tha
 - C
 - Bash
 
-### Development
+### Web & Development
 - React
 - Node.js
 - Tailwind CSS
@@ -44,11 +46,11 @@ My current focus is on understanding technology from the fundamentals rather tha
 
 ## What I'm Building
 
-I use my repositories to document practical projects, experiments, notes, and things I learn while developing my technical skills.
+I'm currently working toward my first real projects.
 
-More real projects will be added as I build them.
+For now, my repositories contain things I'm learning, experimenting with, and documenting. As I build more, I'll add the projects here.
 
-## Learning Approach
+## How I Learn
 
 ```text
-Learn → Build → Break → Understand → Improve 
+Learn → Build → Break → Understand → Improve
