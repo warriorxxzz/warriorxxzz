@@ -3,25 +3,31 @@ import type { PersonalInfo } from "../types";
 export const PERSONAL: PersonalInfo = {
   handle: "W4M",
   name: "Prakash Yadav",
-  role: "Student • Developer • Cybersecurity Learner",
-  tagline:
-    "Focused on Linux systems, Python, and cybersecurity fundamentals — learning through hands-on projects and continuous experimentation.",
+  role: "Student who codes and breaks things",
+  tagline: "Mostly Python, Bash, and Linux. Still figuring things out.",
+
   bio: [
-    "I'm a student developer based in Nepal, working primarily with Python and Linux, with a growing focus on networking and cybersecurity fundamentals.",
-    "My approach is hands-on: I build small tools, break them, and dig into why — that process is where most of my actual learning happens.",
-    "This site tracks that work as it develops — projects, tools, and the systems I'm learning to work with.",
+    "I'm a student from Nepal and I spend a lot of my free time messing with code and Linux.",
+    "Right now I'm playing around with a log parser and a small homelab setup. They're both unfinished.",
+    "I made this site to keep my projects and notes in one place instead of forgetting what I learned.",
   ],
+
   location: "Nepal",
-  availability: "Open to learning, projects & collaboration",
+  availability: "Open to internships, projects, or just talking about tech",
+
   email: "warriorxxzz8@gmail.com",
+  whatsapp: "9815240112",
+  facebook: "https://facebook.com/yadav.prakash.618537",
   githubUsername: "warriorxxzz",
+
   now: {
-    learning: "Python • Linux • Networking",
-    building: "First production-ready projects",
-    exploring: "Web fundamentals • Cybersecurity",
+    learning: "Python, Linux, Networking",
+    building: "A log parser and a homelab",
+    exploring: "Web stuff and cybersecurity",
   },
+
   lessonsLearned: [
-    "Understanding why something works is more useful than memorizing the command.",
-    "Breaking something and fixing it teaches me more than getting it right immediately.",
+    "I remember things better when I actually understand what the command is doing.",
+    "Breaking something is usually less annoying after you learn how to fix it.",
   ],
 };

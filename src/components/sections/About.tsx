@@ -21,17 +21,15 @@ export default function About() {
               <div>
                 <p className="text-sm text-muted">{PERSONAL.name}</p>
                 <h1 className="text-display mt-1 font-display font-semibold leading-snug text-text">
-                  Developer focused on Python, Linux, and cybersecurity fundamentals.
+                  {PERSONAL.tagline}
                 </h1>
 
                 <div className="mt-6 max-w-xl space-y-3">
-                  <p className="text-base leading-relaxed text-muted">
-                    I focus on practical engineering — building CLI automation tools, exploring
-                    Linux system internals, and understanding network security layer by layer.
-                  </p>
-                  <p className="text-base leading-relaxed text-muted">
-                    This site logs my technical journey, labs, and active builds.
-                  </p>
+                  {PERSONAL.bio.map((p) => (
+                    <p key={p} className="text-base leading-relaxed text-muted">
+                      {p}
+                    </p>
+                  ))}
                 </div>
 
                 <div className="mt-6 inline-flex items-center gap-2 rounded-lg border border-border bg-surface-2/80 px-3 py-2 font-mono text-xs text-muted">
@@ -39,7 +37,7 @@ export default function About() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-75" />
                     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-signal" />
                   </span>
-                  Currently: {PERSONAL.now.learning}
+                  Right now: {PERSONAL.now.learning}
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -47,7 +45,7 @@ export default function About() {
                     href="#projects"
                     className="flex items-center gap-2 rounded-xl border border-signal/30 bg-signal/10 px-5 py-2.5 text-sm font-medium text-signal transition-all hover:bg-signal/20"
                   >
-                    View Projects
+                    See what I'm building
                     <Icon name="arrow-right" className="h-4 w-4" />
                   </a>
                   <a

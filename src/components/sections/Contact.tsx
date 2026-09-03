@@ -4,6 +4,8 @@ import { SOCIAL_LINKS } from "../../data/social";
 import Icon from "../icons/Icon";
 import Reveal from "../ui/Reveal";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdeozwob";
+
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
@@ -16,16 +18,36 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 const inputClasses =
   "w-full rounded-xl border border-border bg-bg/60 px-4 py-3 text-sm text-text placeholder:text-muted/60 outline-none transition-all focus:border-signal/50 focus:ring-1 focus:ring-signal/50";
 
+type Status = "idle" | "sending" | "sent" | "error";
+
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio message from ${name || "a visitor"}`);
-    const body = encodeURIComponent(`${message}\n\n—\n${name}\n${email}`);
-    window.location.href = `mailto:${PERSONAL.email}?subject=${subject}&body=${body}`;
+    setStatus("sending");
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.target as HTMLFormElement),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -33,7 +55,10 @@ export default function Contact() {
       <div className="mx-auto max-w-xl">
         <Reveal>
           <h2 className="text-display mb-2 font-display font-semibold text-text">Contact</h2>
-          <p className="mb-10 text-sm text-muted">{PERSONAL.availability}</p>
+          <p className="mb-2 text-sm text-muted">{PERSONAL.availability}</p>
+          <p className="mb-10 text-sm text-muted">
+            {PERSONAL.name} · {PERSONAL.email}
+          </p>
         </Reveal>
 
         <Reveal delay={0.05}>
@@ -45,10 +70,11 @@ export default function Contact() {
               <Field label="Your name">
                 <input
                   type="text"
+                  name="name"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Jane Doe"
+                  placeholder="Your name"
                   className={inputClasses}
                 />
               </Field>
@@ -56,16 +82,18 @@ export default function Contact() {
               <Field label="Your email">
                 <input
                   type="email"
+                  name="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="jane@example.com"
+                  placeholder="you@example.com"
                   className={inputClasses}
                 />
               </Field>
 
               <Field label="Message">
                 <textarea
+                  name="message"
                   required
                   rows={4}
                   value={message}
@@ -77,11 +105,21 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-signal/40 bg-surface-2 px-6 py-3.5 font-mono text-sm text-signal shadow-md shadow-signal/5 transition-all duration-200 hover:bg-signal hover:text-bg"
+                disabled={status === "sending"}
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-signal/40 bg-surface-2 px-6 py-3.5 font-mono text-sm text-signal shadow-md shadow-signal/5 transition-all duration-200 hover:bg-signal hover:text-bg disabled:opacity-50"
               >
-                Send Message
-                <Icon name="arrow-right" className="h-4 w-4" />
+                {status === "sending" ? "Sending..." : "Say hi"}
+                {status !== "sending" && <Icon name="arrow-right" className="h-4 w-4" />}
               </button>
+
+              {status === "sent" && (
+                <p className="text-center text-sm text-status">Thanks — message sent.</p>
+              )}
+              {status === "error" && (
+                <p className="text-center text-sm text-muted">
+                  Something went wrong. Try emailing directly instead.
+                </p>
+              )}
             </div>
           </form>
         </Reveal>

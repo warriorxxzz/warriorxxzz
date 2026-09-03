@@ -1,18 +1,17 @@
 import type { Skill } from "../types";
 
 export const SKILLS: Skill[] = [
-  { name: "Python", category: "Languages", note: "Learning & building" },
+  { name: "Python", category: "Languages", note: "Writing small scripts" },
+  { name: "Bash", category: "Languages", note: "Learning with Linux" },
   { name: "JavaScript", category: "Languages", note: "Learning" },
   { name: "TypeScript", category: "Languages", note: "Learning" },
-  { name: "C", category: "Languages", note: "Fundamentals" },
-  { name: "Bash", category: "Languages", note: "Learning Linux & scripting" },
 
-  { name: "React", category: "Frameworks & Tools", note: "Learning" },
-  { name: "Node.js", category: "Frameworks & Tools", note: "Learning" },
-  { name: "Tailwind CSS", category: "Frameworks & Tools", note: "Learning" },
-  { name: "Git", category: "Frameworks & Tools", note: "Daily use" },
+  { name: "Linux", category: "Tools", note: "Ubuntu / Debian, using terminal" },
+  { name: "Git", category: "Tools", note: "Using it" },
+  { name: "React", category: "Tools", note: "Learning" },
+  { name: "Node.js", category: "Tools", note: "Learning" },
 
-  { name: "Linux", category: "Foundations", note: "Learning systems & command line" },
-  { name: "Networking", category: "Foundations", note: "Learning the fundamentals" },
-  { name: "Cybersecurity", category: "Foundations", note: "Starting with the fundamentals" },
+  { name: "Networking", category: "Learning", note: "Basics" },
+  { name: "Wireshark", category: "Learning", note: "Looking at packets" },
+  { name: "Hack The Box", category: "Learning", note: "Linux Fundamentals - 4 / 30 modules done" },
 ];

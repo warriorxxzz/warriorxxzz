@@ -1,4 +1,4 @@
-export type ProjectStatus = "Completed" | "In Active Development" | "Active Practice" | "Planned";
+export type ProjectStatus = "Completed" | "Working on it" | "In progress" | "Planned";
 
 export interface Project {
   title: string;
@@ -32,6 +32,7 @@ export interface Achievement {
 export type IconName =
   | "github"
   | "linkedin"
+  | "facebook"
   | "mail"
   | "whatsapp"
   | "external"
@@ -67,6 +68,8 @@ export interface PersonalInfo {
   location: string;
   availability: string;
   email: string;
+  whatsapp: string;
+  facebook: string;
   githubUsername: string;
   now: {
     learning: string;

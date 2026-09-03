@@ -4,8 +4,8 @@ import Icon from "../icons/Icon";
 
 const statusStyles: Record<ProjectStatus, string> = {
   Completed: "text-status border-status/30",
-  "In Active Development": "text-signal border-signal/30",
-  "Active Practice": "text-signal border-signal/30",
+  "Working on it": "text-signal border-signal/30",
+  "In progress": "text-signal border-signal/30",
   Planned: "text-muted border-border",
 };
 

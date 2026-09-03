@@ -32,6 +32,12 @@ export default function Icon({ name, className }: IconProps) {
           <path d="M8 11v5M8 8v.01M12 16v-5M12 16v-2.5c0-1.2.9-2.5 2.5-2.5s2.5 1.3 2.5 2.5V16" />
         </svg>
       );
+    case "facebook":
+          return (
+            <svg {...common} fill="currentColor" stroke="none">
+              <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.3-1.5 1.6-1.5H16.5V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.3V21h3.2Z" />
+            </svg>
+          );
     case "mail":
       return (
         <svg {...common}>
